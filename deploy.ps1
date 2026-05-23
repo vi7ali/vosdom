@@ -1,22 +1,3 @@
-<#
-.SYNOPSIS
-  Build the site and deploy it to vosdom.space.
-
-.DESCRIPTION
-  Steps:
-    1. Build with `hugo --minify` into ./public.
-    2. Sanity-check that public/index.html is present and non-empty.
-    3. SCP the build to a staging dir on the VPS.
-    4. Server-side rsync staging -> /var/www/vosdom/ with --delete.
-    5. Print post-deploy verification reminders (curl + browser + VPN smoke test).
-
-  Requires ssh and scp on PATH (Git for Windows provides them).
-  No rsync needed locally - the server-side rsync handles atomic-ish swap and pruning.
-
-  This script ONLY writes to /var/www/vosdom/. It does NOT touch nginx config,
-  the amnezia-xray container, the amnezia-awg2 container, or UFW.
-#>
-
 [CmdletBinding()]
 param(
   [string] $RemoteUser    = $(if ($env:VOSDOM_REMOTE_USER) { $env:VOSDOM_REMOTE_USER } else { 'deploy' }),
@@ -25,11 +6,6 @@ param(
   [string] $RemoteStaging = '/tmp/vosdom-deploy',
   [switch] $SkipBuild
 )
-
-# Configure RemoteUser / RemoteHost either by editing the defaults above,
-# by setting $env:VOSDOM_REMOTE_USER / $env:VOSDOM_REMOTE_HOST,
-# or by passing -RemoteUser / -RemoteHost on the command line.
-# The default 'vosdom-vps' assumes an SSH alias in ~/.ssh/config.
 
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -84,5 +60,3 @@ Write-Host ''
 Write-Host 'Verification - please do all three before walking away:' -ForegroundColor Yellow
 Write-Host '  1. curl -sI https://vosdom.space            (expect 200, valid cert)'
 Write-Host '  2. Open https://vosdom.space in a browser   (real content visible, menu works)'
-Write-Host '  3. VPN smoke test: connect a Reality client AND an AmneziaWG client.'
-Write-Host '     If either VPN check fails, STOP and diagnose nginx/xray/UFW before iterating the site.'
