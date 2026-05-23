@@ -1,0 +1,79 @@
+baseURL = "https://vosdom.space/"
+locale = "en-us"
+title = "Vitaly"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = true
+buildExpired = false
+
+[pagination]
+  pagerSize = 10
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 40
+
+[params]
+  env = "production"
+  description = "Vitaly — notes on web dev, work, and the games, shows, and books I'm spending time with."
+  author = "Vitaly"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  DateFormat = "2006-01-02"
+  mainSections = ["blog"]
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Vitaly."
+    Content = "I tinker with code in my spare time and write here about web dev, work, and the games, shows, and books I'm spending time with. The blog is the most likely place to find something new."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/vi7ali"
+
+  [[params.socialIcons]]
+    name = "telegram"
+    url = "https://t.me/vitaly_osipov"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:vi7ali@gmail.com"
+
+  [params.assets]
+    disableHLJS = false
+    favicon = "/favicon.ico"
+
+[taxonomies]
+  tag = "tags"
