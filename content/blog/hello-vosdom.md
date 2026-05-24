@@ -15,4 +15,4 @@ The plan, loosely:
 
 No promises about cadence. I'd rather post once a quarter and mean it than queue up filler. If you want to know when something new shows up, the [RSS feed](/index.xml) is the way.
 
-Source for the site lives at [github.com/vi7ali/vosdom-space](https://github.com/vi7ali) (link will resolve once the repo is up).
+Source for the site lives at [github.com/vi7ali/vosdom](https://github.com/vi7ali).
