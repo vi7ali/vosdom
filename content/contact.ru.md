@@ -1,11 +1,10 @@
 ---
-title: "Contact"
-url: "/contact/"
+title: "Контакты"
 hideMeta: true
 ShowReadingTime: false
 ---
 
-A few ways to reach me. I'm not on most social networks.
+Несколько способов со мной связаться. В большинстве соцсетей меня нет.
 
 - **Email** — [vi7ali@gmail.com](mailto:vi7ali@gmail.com)
 - **Telegram** — [@vitaly_osipov](https://t.me/vitaly_osipov)

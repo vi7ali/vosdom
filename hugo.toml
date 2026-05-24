@@ -1,7 +1,8 @@
 baseURL = "https://vosdom.space/"
-locale = "en-us"
-title = "Vitaly"
 theme = "PaperMod"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 enableRobotsTXT = true
 enableEmoji = true
@@ -16,33 +17,78 @@ buildExpired = false
   disableXML = true
   minifyOutput = true
 
-[[menu.main]]
-  identifier = "blog"
-  name = "Blog"
-  url = "/blog/"
-  weight = 10
+[taxonomies]
+  tag = "tags"
 
-[[menu.main]]
-  identifier = "projects"
-  name = "Projects"
-  url = "/projects/"
-  weight = 20
+[languages]
+  [languages.en]
+    label = "English"
+    locale = "en-us"
+    weight = 1
+    title = "Vitaly"
 
-[[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 30
+    [[languages.en.menu.main]]
+      identifier = "blog"
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 10
+    [[languages.en.menu.main]]
+      identifier = "projects"
+      name = "Projects"
+      pageRef = "/projects"
+      weight = 20
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      pageRef = "/about"
+      weight = 30
+    [[languages.en.menu.main]]
+      identifier = "contact"
+      name = "Contact"
+      pageRef = "/contact"
+      weight = 40
 
-[[menu.main]]
-  identifier = "contact"
-  name = "Contact"
-  url = "/contact/"
-  weight = 40
+    [languages.en.params]
+      description = "Vitaly — notes on web dev, work, and the games, shows, and books I'm spending time with."
+      [languages.en.params.homeInfoParams]
+        Title = "Hi, I'm Vitaly."
+        Content = "I tinker with code in my spare time and write here about web dev, work, and the games, shows, and books I'm spending time with. The blog is the most likely place to find something new."
+
+  [languages.ru]
+    label = "Русский"
+    locale = "ru-ru"
+    weight = 2
+    title = "Виталий"
+
+    [[languages.ru.menu.main]]
+      identifier = "blog"
+      name = "Блог"
+      pageRef = "/blog"
+      weight = 10
+    [[languages.ru.menu.main]]
+      identifier = "projects"
+      name = "Проекты"
+      pageRef = "/projects"
+      weight = 20
+    [[languages.ru.menu.main]]
+      identifier = "about"
+      name = "Обо мне"
+      pageRef = "/about"
+      weight = 30
+    [[languages.ru.menu.main]]
+      identifier = "contact"
+      name = "Контакты"
+      pageRef = "/contact"
+      weight = 40
+
+    [languages.ru.params]
+      description = "Виталий — заметки о веб-разработке, работе, играх, сериалах и книгах, на которые уходит свободное время."
+      [languages.ru.params.homeInfoParams]
+        Title = "Привет, я Виталий."
+        Content = "В свободное время копаюсь в коде и пишу здесь о веб-разработке, работе и о тех играх, фильмах, сериалах и книгах, которыми увлёкся. Чаще всего что-то новое появляется в блоге."
 
 [params]
   env = "production"
-  description = "Vitaly — notes on web dev, work, and the games, shows, and books I'm spending time with."
   author = "Vitaly"
   defaultTheme = "auto"
   ShowReadingTime = true
@@ -54,10 +100,6 @@ buildExpired = false
   ShowRssButtonInSectionTermList = true
   DateFormat = "2006-01-02"
   mainSections = ["blog"]
-
-  [params.homeInfoParams]
-    Title = "Hi, I'm Vitaly."
-    Content = "I tinker with code in my spare time and write here about web dev, work, and the games, shows, and books I'm spending time with. The blog is the most likely place to find something new."
 
   [[params.socialIcons]]
     name = "github"
@@ -74,6 +116,3 @@ buildExpired = false
   [params.assets]
     disableHLJS = false
     favicon = "/favicon.ico"
-
-[taxonomies]
-  tag = "tags"
