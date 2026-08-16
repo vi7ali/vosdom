@@ -20,6 +20,7 @@ Thumbs.db
 
 # Local project notes (not for the public repo)
 CLAUDE.md
+AGENTS.md
 
 # Secrets — defensive patterns; should never appear here, but make sure they can't
 .env
