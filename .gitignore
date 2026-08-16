@@ -15,6 +15,9 @@ Thumbs.db
 # Claude Code workspace (settings, plans, transcripts, etc.)
 .claude/
 
+# Codex CLI config (contains API keys)
+.codex/
+
 # Local project notes (not for the public repo)
 CLAUDE.md
 
